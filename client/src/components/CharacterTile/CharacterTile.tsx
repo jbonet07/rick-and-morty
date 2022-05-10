@@ -34,6 +34,21 @@ export const CharacterTile = (props: CharacterTileProps) => {
     window.localStorage.setItem("favorites", JSON.stringify(foo));
   };
 
+  const showStatus = (status: string) => {
+    let color = "white";
+    switch (status) {
+      case "Alive":
+        color = "green";
+        break;
+
+      case "Dead":
+        color = "red";
+        break;
+      default:
+        break;
+    }
+    return <div style={{ color: color }}>{props.character.status}</div>;
+  };
   return (
     <div className="character-container">
       <img src={selected ? FullHeart : EmptyHeart} className="heart-icon" onClick={handleSelect} />
@@ -48,7 +63,7 @@ export const CharacterTile = (props: CharacterTileProps) => {
           <b>{props.character.name}</b>
         </div>
         <div>{props.character.species}</div>
-        <div>{props.character.status}</div>
+        {showStatus(props.character.status)}
       </div>
     </div>
   );
