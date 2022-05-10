@@ -1,0 +1,22 @@
+.character-container{
+
+    display: flex;
+    flex-direction: column;
+    background-color: #292929;
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    position: relative;
+    
+}
+.heart-icon{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    z-index: 100;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    
+}
